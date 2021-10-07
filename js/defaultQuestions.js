@@ -1,5 +1,5 @@
 
-var questions = [
+var defaultQuestions = [
     "When was the last time you tried something new?"
     , "Who do you sometimes compare yourself to?"
     , "What’s the most sensible thing you’ve ever heard someone say?"
