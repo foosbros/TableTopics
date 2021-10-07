@@ -123,7 +123,10 @@ $(function() {
   
   $("#min-seconds").change(minSecondsChange);
   $("#max-seconds").change(maxSecondsChange);
+  
+  $("#question-select").change(changeQuestions);
 
+  questionList = defaultQuestions
   getNextQuestion();
   minSecondsChange();
   maxSecondsChange();
@@ -147,6 +150,25 @@ function minSecondsChange() {
   }
 }
 
+function changeQuestions(){  
+  var questionSelect = $("#question-select");
+
+  var questionSet = questionSelect.find(":selected").text();
+
+  if(questionSet === "Silly")
+  {
+    usedQuestions = [-1];
+    questionList = sillyQuestions;
+    getNextQuestion();
+  }
+  else
+  {
+    usedQuestions = [-1];
+    questionList = defaultQuestions;
+    getNextQuestion();
+  }
+}
+
 function maxSecondsChange() {
   var minSeconds = $("#min-seconds");
   var maxSeconds = $("#max-seconds");
@@ -165,20 +187,20 @@ function maxSecondsChange() {
 }
 
 function getNextQuestion(){
-  if(usedQuestions.length == questions.length)
+  if(usedQuestions.length == questionList.length)
   {
     usedQuestions = [];
   }
 
-  var nextQuestionNumber = parseInt(getRandomArbitrary(0, questions.length));
+  var nextQuestionNumber = parseInt(getRandomArbitrary(0, questionList.length));
 
   while(usedQuestions.indexOf(nextQuestionNumber) >= 0) {
-     nextQuestionNumber = parseInt(getRandomArbitrary(0, questions.length));
+     nextQuestionNumber = parseInt(getRandomArbitrary(0, questionList.length));
   }
 
   usedQuestions.push(nextQuestionNumber);
 
-  $("#question").html(questions[nextQuestionNumber]);
+  $("#question").html(questionList[nextQuestionNumber]);
 }
 
 function getRandomArbitrary(min, max) {
@@ -186,3 +208,4 @@ function getRandomArbitrary(min, max) {
 }
 
 var usedQuestions = [-1];
+var questionList;
