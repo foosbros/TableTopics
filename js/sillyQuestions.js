@@ -1,3 +1,7 @@
+/*
+  Sourced these from some website that is no longer up. If you can source these let me know and I will give credit.
+*/
+
 
 var sillyQuestions = [
     "What breed of dog would you be?",

@@ -1,3 +1,6 @@
+/*
+  Sourced these from some website that is no longer up. If you can source these let me know and I will give credit.
+*/
 
 var defaultQuestions = [
     "When was the last time you tried something new?"

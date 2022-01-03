@@ -155,18 +155,20 @@ function changeQuestions(){
 
   var questionSet = questionSelect.find(":selected").text();
 
-  if(questionSet === "Silly")
-  {
-    usedQuestions = [-1];
-    questionList = sillyQuestions;
-    getNextQuestion();
+  usedQuestions = [-1];
+  
+  switch(questionSet) {
+    case "Silly":
+      questionList = sillyQuestions;
+      break;
+    case "Kids":
+      questionList = kidQuestions;
+      break;
+    default:
+      questionList = defaultQuestions;
   }
-  else
-  {
-    usedQuestions = [-1];
-    questionList = defaultQuestions;
-    getNextQuestion();
-  }
+  
+  getNextQuestion();
 }
 
 function maxSecondsChange() {
