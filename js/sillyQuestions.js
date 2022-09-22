@@ -90,5 +90,9 @@ var sillyQuestions = [
     "What fictional family would you be a member of?",
     "Which words or phrases do you overuse?",
     "Do you think ignorance is bliss?",
-    "What's the best pickup line you ever heard?"
+    "What's the best pickup line you ever heard?",
+    "A toy company makes an action figure of you. What accessories does it come with?",
+    "Who's voice would you like to narrate your life inside your head?",
+    "What is a mundane daily task that you are world class at?",
+    "If you were arrested what would your friends/family assume it was for?"
     ];
